@@ -14,6 +14,13 @@ The system combines:
 - Local LLM inference
 - Streaming responses
 
+### Diagrams
+#### System Architecture
+![Architecture Diagram](docs/architecture.png)
+#### LangGraph Agent Workflow
+![LangGraph Agent Workflow Diagram](docs/langgraph_agent_workflow.png)
+#### Streaming Response Flow
+![Streaming Response Flow Diagram](docs/streaming_response_flow.png)
 ### High-Level Flow
 
 ```
