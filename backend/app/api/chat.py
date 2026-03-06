@@ -1,5 +1,7 @@
+from app.agents.streaming_rag_agent import stream_answer
 from fastapi import APIRouter
 from pydantic import BaseModel
+from fastapi.responses import StreamingResponse
 from app.agents.rag_agent import run_agent
 
 router = APIRouter()
@@ -17,3 +19,11 @@ def ask_question(req: QuestionRequest):
         "answer": result["answer"],
         "sources": result["sources"]
     }
+
+@router.post("/stream")
+def stream_chat(req: QuestionRequest):
+
+    return StreamingResponse(
+        stream_answer(req.question),
+        media_type="text/plain"
+    )
