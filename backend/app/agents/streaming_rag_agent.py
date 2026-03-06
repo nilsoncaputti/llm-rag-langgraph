@@ -1,6 +1,8 @@
 from typing import TypedDict, List
 from threading import Thread
 
+from app.ingestion import repo_graph
+from app.retrieval.graph_retrieval import expand_with_graph
 from transformers import pipeline, AutoTokenizer, TextIteratorStreamer
 from langchain_core.documents import Document
 from langgraph.graph import StateGraph, END
@@ -47,6 +49,10 @@ def retrieve_docs(state: AgentState):
     query = state.get("rewritten_question") or state["question"]
 
     docs = search_documents(query, k=4)
+    
+    expanded_symbols = expand_with_graph(docs)
+    additional_docs = search_documents(" ".join(expanded_symbols))
+    docs.extend(additional_docs)
 
     return {"documents": docs}
 
