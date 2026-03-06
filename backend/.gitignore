@@ -52,3 +52,6 @@ htmlcov/
 build/
 dist/
 *.egg-info/
+
+repo/
+chroma_db/
