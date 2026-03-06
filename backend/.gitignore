@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+
+# VS Code
+.vscode/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# Jupyter
+*.ipynb
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# FastAPI/Starlette
+*.sqlite3
+
+# Misc
+*.swp
+*.bak
+
+# Ignore data and models
+/data/
+/models/
+
+# Ignore migrations
+migrations/
+
+# Ignore test outputs
+test-results/
+
+# Ignore coverage
+htmlcov/
+.coverage
+.coverage.*
+.cache
+
+# Ignore build
+build/
+dist/
+*.egg-info/
